@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    tools:context=".SignUpPage">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo2"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:layout_below="@id/logo"
+        android:id="@+id/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Create your account"
+        android:textColor="@android:color/white"
+        android:textSize="30dp" />
+
+    <RelativeLayout
+        android:layout_below="@id/TextView"
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:ems="10"
+            android:hint="Nama"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/emailregister"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/name"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/noID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/emailregister"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:ems="10"
+            android:hint="No KTP"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/passwordregister"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/noID"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/nohp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/passwordregister"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:ems="10"
+            android:hint="Nomor HP"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/buttontanggallahir"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/nohp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bottom_border"
+            android:text="Tanggal Lahir"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/regis"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:background="@drawable/button"
+        android:textAllCaps="false"
+        android:text="Sign Up"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+</RelativeLayout>
