@@ -88,6 +88,13 @@
             android:background="@drawable/layout_bg"
             android:layout_height="200dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Rekomendasi Produk"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
             <ScrollView
                 android:layout_width="match_parent"
 
