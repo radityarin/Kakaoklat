@@ -1,4 +1,4 @@
-package com.example.kakao;
+package com.radit.kakao;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -25,8 +25,6 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressDialog PD;
     private TextInputLayout labelMode;
-
-
 
     @Override    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

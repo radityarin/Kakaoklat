@@ -1,4 +1,4 @@
-package com.example.kakao;
+package com.radit.kakao;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,9 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnSignUp, btnLogin;
     private ProgressDialog PD;
 
-    @Override    protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_in_page);
 
         PD = new ProgressDialog(this);
         PD.setMessage("Loading...");
@@ -32,10 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         PD.setCanceledOnTouchOutside(false);
         auth = FirebaseAuth.getInstance();
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        btnLogin = (Button) findViewById(R.id.sign_in_button);
+        inputEmail = (EditText) findViewById(R.id.emaillogin);
+        inputPassword = (EditText) findViewById(R.id.passwordlogin);
+        btnSignUp = (Button) findViewById(R.id.regis);
+        btnLogin = (Button) findViewById(R.id.login);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override            public void onClick(View view) {

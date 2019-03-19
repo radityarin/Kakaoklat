@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -38,11 +39,19 @@ public class HomeFragment extends Fragment {
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        ImageButton bubuk = (ImageButton) view.findViewById(R.id.buttonkategoribubuk);
+        bubuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ListProductPage.class);
+                startActivity(intent);
+            }
+        });
         Button petani = (Button) view.findViewById(R.id.tombolpetani);
         petani.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),produkPage.class);
+                Intent intent = new Intent(getActivity(),RegistrasiPetani.class);
                 startActivity(intent);
             }
         });

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:orientation="vertical"
-    tools:context=".SignInPage">
+    tools:context=".LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,10 +16,10 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:src="@drawable/logo2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo2" />
 
         <EditText
             android:id="@+id/emaillogin"
@@ -60,8 +60,8 @@
             android:layout_below="@id/passwordlogin"
             android:layout_marginTop="30dp"
             android:background="@drawable/button"
-            android:textAllCaps="false"
             android:text="Login"
+            android:textAllCaps="false"
             android:textColor="@color/colorAccent"
             android:textSize="25dp" />
 
@@ -75,6 +75,18 @@
             android:text="Belum punya akun? Daftar Disini"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/forget_password_button"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/login"
+            android:layout_marginTop="40dp"
+            android:text="Lupa Password?"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textAlignment="center"
             android:textColor="@android:color/white" />
     </RelativeLayout>
 </RelativeLayout>

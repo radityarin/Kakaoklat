@@ -1,4 +1,4 @@
-package com.example.kakao;
+package com.radit.kakao;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,14 +20,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
     private FirebaseAuth auth;
-    private Button btnSignUp, btnLogin;
+    private Button btnSignUp;
     private ProgressDialog PD;
 
-
-
-    @Override    protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_sign_up_page);
 
         PD = new ProgressDialog(this);
         PD.setMessage("Loading...");
@@ -37,17 +36,17 @@ public class RegisterActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(RegisterActivity.this, UserSetting.class));
+            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             finish();
         }
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        btnLogin = (Button) findViewById(R.id.sign_in_button);
+        inputEmail = (EditText) findViewById(R.id.emailregister);
+        inputPassword = (EditText) findViewById(R.id.passwordregister);
+        btnSignUp = (Button) findViewById(R.id.regis);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override            public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
                 final String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
 
@@ -65,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                     Toast.LENGTH_LONG).show();
                                             Log.v("error", task.getResult().toString());
                                         } else {
-                                            Intent intent = new Intent(RegisterActivity.this, UserSetting.class);
+                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                             startActivity(intent);
                                             finish();
                                         }
@@ -84,11 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override            public void onClick(View view) {
-                finish();
-            }
-        });
 
 
     }

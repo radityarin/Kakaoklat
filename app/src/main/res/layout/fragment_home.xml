@@ -129,6 +129,7 @@
                         android:src="@drawable/coklatbiji" />
 
                     <ImageButton
+                        android:id="@+id/buttonkategoribubuk"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:background="@android:color/white"
