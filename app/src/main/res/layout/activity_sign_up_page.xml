@@ -45,7 +45,7 @@
             android:ems="10"
             android:hint="Nama"
             android:inputType="textPersonName"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray" />
 
         <EditText
@@ -58,7 +58,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray" />
 
         <EditText
@@ -71,7 +71,7 @@
             android:ems="10"
             android:hint="No KTP"
             android:inputType="number"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray" />
 
         <EditText
@@ -84,7 +84,7 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray" />
 
         <EditText
@@ -97,7 +97,7 @@
             android:ems="10"
             android:hint="Nomor HP"
             android:inputType="number"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/darker_gray" />
 
         <Button

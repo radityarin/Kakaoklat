@@ -23,6 +23,7 @@
             android:background="@drawable/ic_arrow_back_brown_24dp"
             android:layout_height="30dp" />
         <TextView
+            android:id="@+id/kategoriproduk"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:text="Batang"

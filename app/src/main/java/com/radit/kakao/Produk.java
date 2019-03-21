@@ -2,45 +2,42 @@ package com.radit.kakao;
 
 public class Produk {
 
-    String namaProduk, urlProduk, kategori;
-    int hargaProduk;
+    private String namaProduk, urlProduk, kategori, idproduk, informasiproduk;
+    private int hargaProduk;
 
-    public Produk(String namaProduk, String urlProduk, String kategori, int hargaProduk) {
+    public Produk() {
+    }
+
+    public Produk(String idproduk, String namaProduk, String urlProduk, String kategori, int hargaProduk, String informasiproduk) {
         this.namaProduk = namaProduk;
         this.urlProduk = urlProduk;
         this.kategori = kategori;
+        this.idproduk = idproduk;
         this.hargaProduk = hargaProduk;
+        this.informasiproduk = informasiproduk;
     }
 
     public String getNamaProduk() {
         return namaProduk;
     }
 
-    public void setNamaProduk(String namaProduk) {
-        this.namaProduk = namaProduk;
-    }
-
     public String getUrlProduk() {
         return urlProduk;
-    }
-
-    public void setUrlProduk(String urlProduk) {
-        this.urlProduk = urlProduk;
     }
 
     public String getKategori() {
         return kategori;
     }
 
-    public void setKategori(String kategori) {
-        this.kategori = kategori;
+    public String getIdproduk() {
+        return idproduk;
     }
 
     public int getHargaProduk() {
         return hargaProduk;
     }
 
-    public void setHargaProduk(int hargaProduk) {
-        this.hargaProduk = hargaProduk;
+    public String getInformasiproduk() {
+        return informasiproduk;
     }
 }

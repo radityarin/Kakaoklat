@@ -40,21 +40,21 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
         edtMode = (EditText) findViewById(R.id.mode);
         txtMode = (TextView) findViewById(R.id.title);
         submit = (Button) findViewById(R.id.submit_button);
-        labelMode = (TextInputLayout) findViewById(R.id.label);
+//        labelMode = (TextInputLayout) findViewById(R.id.label);
 
         final int mode = getIntent().getIntExtra("Mode", 0);
         if (mode == 0) {
             txtMode.setText("Forget Password");
             edtMode.setHint("Enter Registered Email");
-            labelMode.setHint("Enter Registered Email");
+//            labelMode.setHint("Enter Registered Email");
         } else if (mode == 1) {
             txtMode.setText("Change Password");
             edtMode.setHint("Enter New Password");
-            labelMode.setHint("Enter New Password");
+//            labelMode.setHint("Enter New Password");
         } else if (mode == 2) {
             txtMode.setText("Change Email");
             edtMode.setHint("Enter New Email");
-            labelMode.setHint("Enter New Email");
+//            labelMode.setHint("Enter New Email");
         } else {
             txtMode.setText("Delete User");
             edtMode.setVisibility(View.GONE);

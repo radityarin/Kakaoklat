@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     tools:context=".HomeFragment">
 
@@ -13,8 +13,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:focusableInTouchMode="true"
             android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -83,12 +83,23 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="220dp">
-
-                <ImageView
+                android:padding="10dp"
+                android:background="@drawable/layout_bg"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/judulterpopuler"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/bannerpenjual" />
+                    android:layout_height="30dp"
+                    android:textSize="20dp"
+                    android:text="Produk Terpopuler"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_below="@+id/judulterpopuler"
+                    android:id="@+id/produkterpopulerrecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
 
             </RelativeLayout>
 
@@ -109,12 +120,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/kategoritext"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/buttonkategoribatang"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:background="@android:color/white"
@@ -122,6 +134,7 @@
                         android:src="@drawable/coklatbatang" />
 
                     <ImageButton
+                        android:id="@+id/buttonkategoribiji"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:background="@android:color/white"
@@ -137,6 +150,7 @@
                         android:src="@drawable/coklatbubuk" />
 
                     <ImageButton
+                        android:id="@+id/buttonkategorisusucair"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:background="@android:color/white"
@@ -157,7 +171,7 @@
                 android:textSize="20dp" />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
+                android:id="@+id/recyclerpengetahuan"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

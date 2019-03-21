@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardprodukvertical"
+    android:layout_width="150dp"
+    android:layout_height="180dp"
+    app:cardElevation="0dp"
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/urlgambarproduk"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/coklatbatang"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/judulproduk"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Coklat Batang"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/judulproduk"
+                    android:id="@+id/hargaproduk"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:text="Rp 76.000"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
