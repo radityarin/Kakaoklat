@@ -18,13 +18,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
 public class RegisterActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener {
 
-    private EditText inputEmail, inputPassword;
+    private EditText inputEmail, inputPassword, inputName,inputKTP,inputNomorHP;
     private FirebaseAuth auth;
     private Button btnSignUp;
     String tgllahir ="";
@@ -49,13 +52,22 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
 
         inputEmail = (EditText) findViewById(R.id.emailregister);
         inputPassword = (EditText) findViewById(R.id.passwordregister);
-        btnSignUp = (Button) findViewById(R.id.regis);
+        inputName = (EditText) findViewById(R.id.name);
+        inputKTP = (EditText) findViewById(R.id.noID);
+        inputNomorHP = (EditText) findViewById(R.id.nohp);
+
+
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
+                final String nama = inputName.getText().toString();
+                final String ktp = inputKTP.getText().toString();
+                final String nohp = inputNomorHP.getText().toString();
+
+
 
                 try {
                     if (password.length() > 0 && email.length() > 0) {
@@ -69,11 +81,22 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
                                                     RegisterActivity.this,
                                                     "Authentication Failed",
                                                     Toast.LENGTH_LONG).show();
+
+
                                             Log.v("error", task.getResult().toString());
                                         } else {
+                                            FirebaseUser user = auth.getCurrentUser();
+                                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                            DatabaseReference myRef = database.getReference("Biodata").child(user.getUid());
+
+//                                            String namaUser, emailUser, NoKTP, password, NomorHP,TanggalLahir
+                                            Profil profil = new Profil(nama,email,ktp,nohp,tgllahir);
+                                            myRef.setValue(profil);
                                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                             startActivity(intent);
+
                                             finish();
+
                                         }
                                         PD.dismiss();
                                     }
