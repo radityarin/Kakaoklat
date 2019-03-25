@@ -18,19 +18,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class RegisterActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener {
+public class RegisterActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
-    private EditText inputEmail, inputPassword, inputName,inputKTP,inputNomorHP;
+    private EditText inputNama, inputEmail, inputNOKTP, inputPassword, inputNOHP;
     private FirebaseAuth auth;
+    String tanggallahir = "";
     private Button btnSignUp;
-    String tgllahir ="";
     private ProgressDialog PD;
 
     @Override
@@ -50,24 +49,30 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
             finish();
         }
 
+        Button btntgllhr = (Button) findViewById(R.id.buttontanggallahir);
+        btntgllhr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(),"date picker ");
+            }
+        });
+
+        inputNama = (EditText) findViewById(R.id.name);
         inputEmail = (EditText) findViewById(R.id.emailregister);
+        inputNOKTP = (EditText) findViewById(R.id.noID);
         inputPassword = (EditText) findViewById(R.id.passwordregister);
-        inputName = (EditText) findViewById(R.id.name);
-        inputKTP = (EditText) findViewById(R.id.noID);
-        inputNomorHP = (EditText) findViewById(R.id.nohp);
-
-
+        inputNOHP = (EditText) findViewById(R.id.nohp);
+        btnSignUp = (Button) findViewById(R.id.regis);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String nama = inputNama.getText().toString();
                 final String email = inputEmail.getText().toString();
+                final String noktp = inputNOKTP.getText().toString();
                 final String password = inputPassword.getText().toString();
-                final String nama = inputName.getText().toString();
-                final String ktp = inputKTP.getText().toString();
-                final String nohp = inputNomorHP.getText().toString();
-
-
+                final String nohp = inputNOHP.getText().toString();
 
                 try {
                     if (password.length() > 0 && email.length() > 0) {
@@ -81,22 +86,16 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
                                                     RegisterActivity.this,
                                                     "Authentication Failed",
                                                     Toast.LENGTH_LONG).show();
-
-
                                             Log.v("error", task.getResult().toString());
                                         } else {
-                                            FirebaseUser user = auth.getCurrentUser();
                                             FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                            DatabaseReference myRef = database.getReference("Biodata").child(user.getUid());
+                                            DatabaseReference myRef = database.getReference("Detail Pengguna").child(auth.getUid());
+                                            Profil profil = new Profil(nama,email,noktp,nohp,tanggallahir);
 
-//                                            String namaUser, emailUser, NoKTP, password, NomorHP,TanggalLahir
-                                            Profil profil = new Profil(nama,email,ktp,nohp,tgllahir);
                                             myRef.setValue(profil);
                                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                             startActivity(intent);
-
                                             finish();
-
                                         }
                                         PD.dismiss();
                                     }
@@ -113,18 +112,7 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
             }
         });
 
-        Button btntgllhr = (Button) findViewById(R.id.buttontanggallahir);
-        btntgllhr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getSupportFragmentManager(),"date picker ");
-            }
-        });
-
-
     }
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Calendar c = Calendar.getInstance();
@@ -132,8 +120,9 @@ public class RegisterActivity extends AppCompatActivity implements  DatePickerDi
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        tgllahir=currentDateString;
+        tanggallahir=currentDateString;
         Button button = (Button) findViewById(R.id.buttontanggallahir);
         button.setText(currentDateString);
     }
+
 }

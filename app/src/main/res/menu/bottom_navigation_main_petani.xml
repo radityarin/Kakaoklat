@@ -8,12 +8,17 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Home"
         app:showAsAction="ifRoom"/>
-
     <item
-        android:id="@+id/historybutton"
+        android:id="@+id/ordermasukbutton"
         android:enabled="true"
-        android:icon="@drawable/ic_history_black_24dp"
-        android:title="History Transaksi"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="Order Masuk"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/produkbutton"
+        android:enabled="true"
+        android:icon="@drawable/ic_shopping_basket_black_24dp"
+        android:title="Produk"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/inboxbutton"

@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:text="Masukan nama usaha (Opsional)"
+            android:text="Masukkan alamat perkebunan"
             android:textColor="@color/colorAccent"/>
 
         <EditText
@@ -47,36 +47,35 @@
             android:layout_below="@id/titlenamausaha"
             android:background="@drawable/edit_text_bottom_border2"
             android:ems="10"
-            android:hint="Nama Usaha"
+            android:hint="Alamat perkebunan"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/darker_gray" />
 
         <TextView
             android:layout_below="@id/emaillogin"
-            android:id="@+id/titledeskripsitoko"
+            android:id="@+id/titleattachment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Masukan deskripsi usaha (Opsional)"
+            android:layout_marginTop="10dp"
+            android:text="Masukkan File MOU"
             android:textColor="@color/colorAccent"/>
 
-        <EditText
-            android:id="@+id/passwordlogin"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/titledeskripsitoko"
-            android:background="@drawable/edit_text_bottom_border2"
-            android:ems="10"
-            android:hint="Deskripsi Usaha"
-            android:textColor="@android:color/black"
-            android:textColorHint="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/fileattachment"
+            android:layout_below="@id/titleattachment"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_add_a_photo_grey_24dp"/>
 
         <Button
             android:id="@+id/selanjutnya"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/passwordlogin"
+            android:layout_below="@id/fileattachment"
             android:layout_marginTop="30dp"
             android:background="@drawable/button3"
             android:textAllCaps="false"

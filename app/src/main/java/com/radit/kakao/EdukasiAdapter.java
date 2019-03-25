@@ -1,6 +1,7 @@
 package com.radit.kakao;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -36,6 +37,14 @@ public class EdukasiAdapter extends RecyclerView.Adapter<EdukasiAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.tv_judul.setText(listedukasi.get(position).getJudul());
         Picasso.get().load(listedukasi.get(position).getUrledukasi()).into(holder.iv_urledukasi);
+        holder.ll_cardrs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,EdukasiPage.class);
+                intent.putExtra("judul",listedukasi.get(position).getJudul());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

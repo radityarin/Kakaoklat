@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:focusableInTouchMode="true"
     tools:context=".HomeFragment">
 
     <android.support.v4.widget.NestedScrollView
@@ -17,42 +18,70 @@
             android:focusableInTouchMode="true"
             android:orientation="vertical">
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/lblExpenseCancel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="9dp"
-                    android:text="Kakaoklat"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/layout_bg"
+                    android:drawableRight="@drawable/ic_search_grey_24dp"
+                    android:hint="Cari Produk......"
+                    android:paddingHorizontal="10dp" />
 
                 <Button
-                    android:id="@+id/btnAddExpense"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/ic_account_circle_black_24dp"
-                    android:backgroundTint="@color/colorAccent" />
+                    android:background="@drawable/ic_notifications_none_black_24dp" />
 
-            </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/layout_bg"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Point Kakaoku\n 230" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Saldo E-Cash\nRp 130.000" />
+            </LinearLayout>
 
 
             <RelativeLayout
                 android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="10dp"
+                android:layout_height="320dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
                 android:background="@drawable/layout_bg">
 
                 <TextView
@@ -62,44 +91,57 @@
                     android:layout_marginTop="20dp"
                     android:text="Selamat Datang!"
                     android:textAlignment="center"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorAccent2"
                     android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/fotomaskotselamatdatang"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/selamatdatang"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/coklatmaskot" />
 
                 <Button
                     android:id="@+id/tombolpetani"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:layout_below="@id/selamatdatang"
+                    android:layout_below="@id/fotomaskotselamatdatang"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/button2"
+                    android:background="@drawable/button3"
                     android:elevation="0dp"
                     android:text="Petani? Silahkan klik disini"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="15dp" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
-                android:background="@drawable/layout_bg"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/layout_bg">
+
                 <TextView
                     android:id="@+id/judulterpopuler"
-                    android:layout_marginHorizontal="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:textSize="20dp"
-                    android:text="Produk Terpopuler"/>
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Produk Terpopuler"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
 
                 <android.support.v7.widget.RecyclerView
-                    android:layout_below="@+id/judulterpopuler"
                     android:id="@+id/produkterpopulerrecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/judulterpopuler"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginBottom="10dp"></android.support.v7.widget.RecyclerView>
 
             </RelativeLayout>
 
@@ -122,6 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/kategoritext"
+                    android:layout_marginBottom="5dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
@@ -162,22 +205,32 @@
             </RelativeLayout>
 
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:text="Pengetahuan tentang Kakao"
-                android:textColor="@android:color/black"
-                android:textSize="20dp" />
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerpengetahuan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/titleinformasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center_vertical"
+                    android:text="Pengetahuan tentang Kakao"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
 
-            </android.support.v7.widget.RecyclerView>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerpengetahuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleinformasi"
+                    android:layout_marginTop="5dp">
 
+                </android.support.v7.widget.RecyclerView>
 
+            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

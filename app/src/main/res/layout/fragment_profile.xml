@@ -30,7 +30,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -55,7 +54,7 @@
                         android:layout_height="30dp"
                         android:layout_below="@+id/circlephotoprofile"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Raditya Rinandyaswara"
+                        android:text="Nama"
                         android:textAlignment="center"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -65,7 +64,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/namaprofile"
-                        android:text="+6281316524040"
+                        android:text="+628XXXXXXXXXX"
+                        android:textColor="@android:color/black"
                         android:textAlignment="center" />
                 </RelativeLayout>
 

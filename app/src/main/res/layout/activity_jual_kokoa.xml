@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".JualKokoa">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Jual Kakao"
+            android:textColor="@color/colorAccent2"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/layout_bg"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:layout_width="90dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="90dp"
+            android:background="@drawable/ic_add_a_photo_grey_24dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Unggah foto produk"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama produk"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/namaproduk"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_bottom_border2"
+            android:ems="10"
+            android:hint="Nama Produk"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi produk"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/deskripsiproduk"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_bottom_border2"
+            android:ems="10"
+            android:hint="Deskripsi Produk"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kuantitas produk"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/kuantitasproduk"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_bottom_border2"
+            android:ems="10"
+            android:hint="Kuantitas Produk"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Harga produk"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/hargaproduk"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_bottom_border2"
+            android:ems="10"
+            android:hint="Harga Produk"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kategori produk"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/kategoriproduk"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/edit_text_bottom_border2"
+            android:ems="10"
+            android:hint="Kategori Produk"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonjualkokoa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jual"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/button3"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:textAllCaps="false"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

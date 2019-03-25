@@ -2,33 +2,62 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearlayoutcardrs"
+    android:layout_marginVertical="5dp"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:layout_marginTop="5dp"
-    android:orientation="vertical"
+    android:layout_height="220dp"
+    android:elevation="0dp"
     app:cardCornerRadius="10dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/urledukasi"
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/urledukasi"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/petanikoakoa" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/trending_gradient_shape_2"/>.
 
+        </FrameLayout>
         <TextView
             android:id="@+id/judul"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="32dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Coklatdasblabab"
-            android:textColor="@android:color/black"
-            android:textSize="17dp" />
+            android:layout_height="70dp"
+            android:text="asdasdasd"
+            android:textSize="20dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:layout_alignParentBottom="true"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/urledukasi"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:src="@drawable/petanikoakoa"-->
+            <!--android:layout_height="130dp"-->
+            <!--android:scaleType="centerCrop" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/judul"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="Coklatdasblabab"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18dp" />-->
 
 
-    </LinearLayout>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>
