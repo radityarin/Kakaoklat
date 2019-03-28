@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HistoryFragment extends Fragment {
+public class TransaksiFragment extends Fragment {
 
-    public HistoryFragment() {
+    public TransaksiFragment() {
         // Required empty public constructor
     }
 

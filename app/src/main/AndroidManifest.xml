@@ -13,55 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".CreditCardPaymentPage"></activity>
-        <activity
-            android:name=".InformasiPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".EdukasiPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".CheckoutPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".MainActivityPetani"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".JualKokoa"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".ListProductPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".produkPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".LandingPage"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".ChatPage"></activity>
+        <activity android:name=".DetailPesananPage" />
+        <activity android:name=".CreditCardPaymentPage" />
+        <activity android:name=".InformasiPage" />
+        <activity android:name=".EdukasiPage"/>
+        <activity android:name=".CheckoutPage" />
+        <activity android:name=".MainActivityPetani" />
+        <activity android:name=".JualKokoa" />
+        <activity android:name=".ListProductPage" />
+        <activity android:name=".produkPage" />
+        <activity android:name=".LandingPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".ForgetAndChangePasswordActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".RegistrasiPetani"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".MarketplaceMain"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".ForgetAndChangePasswordActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegistrasiPetani"/>
+        <activity android:name=".MarketplaceMain" />
     </application>
 
 </manifest>

@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder> {
+public class ProdukPetaniAdapter extends RecyclerView.Adapter<ProdukPetaniAdapter.ViewHolder> {
 
     private ArrayList<Produk> listproduk;
     private Context context;
 
-    public ProdukAdapter(ArrayList<Produk> listproduk, Context context) {
+    public ProdukPetaniAdapter(ArrayList<Produk> listproduk, Context context) {
         this.listproduk = listproduk;
         this.context = context;
     }
@@ -30,7 +30,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.card_produk, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.card_produk_petani, parent, false);
         return new ViewHolder(v);
     }
 
@@ -49,6 +49,15 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
                 context.startActivity(intent);
             }
         });
+        holder.btn_ubahproduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,JualKokoa.class);
+                intent.putExtra("idproduk",listproduk.get(position).getIdproduk());
+                intent.putExtra("ubah",true);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -60,6 +69,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
         private ImageView iv_urlproduk;
         private TextView tv_judulproduk,tv_hargaproduk,tv_kategoriproduk;
         private CardView cv_cardproduk;
+        private Button btn_ubahproduk;
         public ViewHolder(View itemView) {
             super(itemView);
             iv_urlproduk = (ImageView) itemView.findViewById(R.id.urlgambarproduk);
@@ -67,6 +77,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.ViewHolder
             tv_hargaproduk = (TextView) itemView.findViewById(R.id.hargaproduk);
             tv_kategoriproduk = (TextView) itemView.findViewById(R.id.kategoriproduk);
             cv_cardproduk = (CardView) itemView.findViewById(R.id.cardproduk);
+            btn_ubahproduk = (Button) itemView.findViewById(R.id.ubahbutton);
         }
     }
 }

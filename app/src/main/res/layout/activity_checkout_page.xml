@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     tools:context=".CheckoutPage">
 
     <RelativeLayout
@@ -25,11 +25,12 @@
 
     <include
         android:id="@+id/produk"
-        android:layout_below="@id/appbar"
-        android:layout_marginHorizontal="10dp"
         layout="@layout/card_produk"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar"
+        android:layout_marginHorizontal="10dp" />
+
 
 
     <TextView
@@ -38,27 +39,46 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/produk"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:text="Jumlah"
         android:textColor="@color/colorAccent" />
 
-    <EditText
-        android:id="@+id/jumlahproduk"
+    <LinearLayout
+        android:id="@+id/jumlahprodukll"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/titlejumlahproduk"
-        android:layout_marginHorizontal="10dp"
-        android:background="@drawable/edit_text_bottom_border2"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray" />
+        android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tambahjumlah"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/Transparent"
+                android:text="+"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/jumlahproduk"
+                android:layout_width="40dp"
+                android:textAlignment="center"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/kurangjumlah"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/Transparent"
+                android:text="-"
+                android:textSize="30dp" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/titlecatatanpembeli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/jumlahproduk"
+        android:layout_below="@id/jumlahprodukll"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
         android:text="Catatan Pembeli"
@@ -77,6 +97,68 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray" />
 
+    <TextView
+        android:id="@+id/titlealamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/catatanpembeli"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Alamat"
+        android:textColor="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/alamatpembeli"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/titlealamat"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/edit_text_bottom_border2"
+        android:ems="10"
+        android:hint=""
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/titlejasapengiriman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alamatpembeli"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Catatan Pembeli"
+        android:textColor="@color/colorAccent" />
+
+    <Spinner
+        android:id="@+id/inputkurir"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/titlejasapengiriman"
+        android:layout_marginHorizontal="10dp"
+        android:entries="@array/kurir_arrays"
+        android:prompt="@string/kurir" />
+
+
+    <TextView
+        android:id="@+id/titlemetodepembayaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputkurir"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Catatan Pembeli"
+        android:textColor="@color/colorAccent" />
+
+    <Spinner
+        android:id="@+id/inputbank"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/titlemetodepembayaran"
+        android:layout_marginHorizontal="10dp"
+        android:entries="@array/bank_arrays"
+        android:prompt="@string/bank" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -91,6 +173,7 @@
             android:text="Total\nRp 232,000,-" />
 
         <Button
+            android:id="@+id/bayar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"

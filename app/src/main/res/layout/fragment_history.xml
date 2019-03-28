@@ -4,20 +4,12 @@
     android:layout_width="match_parent"
     android:background="@color/colorPrimary"
     android:layout_height="match_parent"
-    tools:context=".HistoryFragment">
+    tools:context=".TransaksiFragment">
 
-    <ScrollView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_history"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/layout_bg">
-        </RelativeLayout>
-
-
-    </ScrollView>
+        android:layout_height="match_parent"/>
 
 
 </FrameLayout>

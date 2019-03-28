@@ -21,6 +21,15 @@ public class produkPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produk_page);
 
+        Button backbutton = (Button) findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(produkPage.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         final ArrayList<Produk> listsemuaproduk = new ArrayList<>();
         listsemuaproduk.add(new Produk("001","Bubuk Cokelat Asli Kabupaten Malang","https://missjunecompany.com/wp-content/uploads/2016/05/Bubuk-Coklat-Murni-Miss-June-350x194.jpg","Bubuk",89000,"I want to know where i can go when youre not alone when i'm feeling down, cause girl why dont you worry bout me, it aint new to me, feeling this lonely"));
         listsemuaproduk.add(new Produk("002","Chocodot Berbagai Rasa","https://ecs7.tokopedia.net/img/cache/700/product-1/2018/11/9/203058895/203058895_b938108a-242a-4ca6-a477-e35956e6f720_1993_1993.jpg","Batang",89000,"I want to know where i can go when youre not alone when i'm feeling down, cause girl why dont you worry bout me, it aint new to me, feeling this lonely"));

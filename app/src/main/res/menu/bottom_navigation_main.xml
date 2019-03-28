@@ -10,10 +10,10 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/historybutton"
+        android:id="@+id/transaksibutton"
         android:enabled="true"
         android:icon="@drawable/ic_history_black_24dp"
-        android:title="History Transaksi"
+        android:title="Transaksi"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/inboxbutton"

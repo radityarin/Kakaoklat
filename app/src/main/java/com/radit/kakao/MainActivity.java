@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                     setTitle("Home");
                     return true;
-                case R.id.historybutton:
-                    HistoryFragment historyFragment = new HistoryFragment();
-                    fragmentTransaction.replace(R.id.main_frame, historyFragment, "History Fragment");
+                case R.id.transaksibutton:
+                    TransaksiFragment transaksiFragment = new TransaksiFragment();
+                    fragmentTransaction.replace(R.id.main_frame, transaksiFragment, "Transaksi Fragment");
                     fragmentTransaction.commit();
-                    setTitle("History");
+                    setTitle("Transaksi");
                     return true;
                 case R.id.inboxbutton:
                     InboxFragment inboxFragment = new InboxFragment();
@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            Window w = getWindow();
+//            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+//        }
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);

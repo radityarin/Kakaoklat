@@ -21,6 +21,7 @@ public class RegistrasiPetani extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistrasiPetani.this, MainActivityPetani.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -34,7 +35,6 @@ public class RegistrasiPetani extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent, "Select File"),REQUEST_CODE);
             }
         });
-
 
     }
 }
